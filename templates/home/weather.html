@@ -1,71 +1,89 @@
-<!-- the_weather/weather/templates/weather/index.html -->
 <!DOCTYPE html>
 <html lang="en">
+<style>
+body {
+  font-family: Source Sans Pro;
+  background: #282828;
+  background: linear-gradient(-45deg,#EE7752,#E73C7E,#23A6D5,#23D5AB);
+  background-size: 400% 400%;
+  animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient{
+  0%{
+    background-position: 0% 50%
+  }
+  50%{
+    background-position: 100% 50%
+  }
+  100%{
+    background-position: 0% 50%
+  }
+}
+
+input[type=submit] {
+  width: 200%;
+  height: 100%;
+  background-color: ##AEB6BF;
+  color: white;
+  padding: 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+input[type=submit]:hover {
+  background-color: #AEB6BF;
+}
+
+input[type=text],select {
+  height:100%;
+  width:100%;
+  padding: 20px ;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+ul{
+  text-align: center;
+}
+li{
+  list-style: none;
+  margin: 10px 30px;
+  display: inline-block;
+  float: none;
+  font-size: 20px;
+  padding: 20px 20px;
+  color: #fff;
+}
+h1{
+  font-weight: lighter;
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+</style>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>What's the weather like?</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+<meta charset="utf-8">
+<title>Weather App</title>
+
 </head>
 <body>
-    <section class="hero is-primary">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    What's the weather like?
-                </h1>
-            </div>
-        </div>
-    </section>
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-offset-4 is-4">
-                    <form method="POST">
-                        <div class="field has-addons">
-                            <div class="control is-expanded">
-                                <input class="input" type="text" placeholder="City Name">
-                            </div>
-                            <div class="control">
-                                <button class="button is-info">
-                                    Add City
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-offset-4 is-4">
-                    <div class="box">
-                        <article class="media">
-                            <div class="media-left">
-                                <figure class="image is-50x50">
-                                    <img src="http://openweathermap.org/img/w/10d.png" alt="Image">
-                                </figure>
-                            </div>
-                            <div class="media-content">
-                                <div class="content">
-                                    <p>
-                                        <span class="title">Las Vegas</span>
-                                        <br>
-                                        <span class="subtitle">29° F</span>
-                                        <br> thunderstorm with heavy rain
-                                    </p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-    </footer>
+  <div class="wrapper">
+    <h1>Weather Search</h1>
+    <form>
+      <ul>
+      <li><input type="text" name="cityname" placeholder="Enter city name..."></li>
+      <li><input type="text" name="country" placeholder="Enter country..."></li>
+      <li><input type="submit" style="color:#17202A" value="Submit"></li>
+    </ul>
+    </form>
+  </div>
 </body>
 </html>
