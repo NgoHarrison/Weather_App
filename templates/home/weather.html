@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
 <style>
 body {
+  text-align: center;
   font-family: Source Sans Pro;
   background: #282828;
   background: linear-gradient(-45deg,#EE7752,#E73C7E,#23A6D5,#23D5AB);
@@ -67,9 +69,16 @@ h1{
   padding-top: 50px;
   margin-bottom: 50px;
 }
-
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    text-align: : center;
+    }
 </style>
-<head>
+
 <meta charset="utf-8">
 <title>Weather App</title>
 
@@ -77,6 +86,31 @@ h1{
 <body>
   <div class="wrapper">
     <h1>Weather Search</h1>
+      <h4>Welcome to the best weather forecast web application of 2019! It is currently:</h4>
+      <script>
+var d = new Date();
+var day = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+var currentDay = day[d.getDay()];
+var currentMonth = months[d.getMonth()];
+var currentDate = d.getDate();
+var currentYear = d.getFullYear();
+var hours = d.getHours();
+var ampm = hours >= 12 ? "PM":"AM";
+hours = ((hours + 11) % 12 + 1);
+var currentTime = hours + ":" + 
+(d.getMinutes()<10 ? "0" + d.getMinutes() : d.getMinutes());
+	document.write("<strong>", currentDay, ",</strong>", "<br>");
+  document.write("<strong>", currentMonth," ",currentDate,", ",currentYear,", </strong>","<br>");
+  document.write("<strong>",currentTime," ",ampm, " EST.","</strong>","<br>");
+function colorScript(type){
+	var colors = ["Red", "Blue", "Brown", "LightBlue"];
+	for (var i=0; i<4; ++i){
+        document.write("<input type=\"radio\" name=\"color\" value=\"" + colors[i] + "\"onclick=\"document.body.style." + type + "='" + colors[i] + "';\">" + colors[i] + " ");
+    }
+}
+
+</script>
     <form>
       <ul>
       <li><input type="text" name="cityname" placeholder="Enter city name..."></li>
@@ -85,5 +119,8 @@ h1{
     </ul>
     </form>
   </div>
+    <div class="footer">
+        <p>&copy; Copyright Johnathan & Harrison 2019</p>
+    </div>
 </body>
 </html>
